@@ -1,0 +1,27 @@
+{
+  "name": "liri",
+  "version": "1.0.0",
+  "description": "Get All Your Media Needs",
+  "main": "liri.js",
+  "dependencies": {
+    "inquirer": "^2.0.0",
+    "jquery": "^3.1.1",
+    "request": "^2.79.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasianart/liri-node-app.git"
+  },
+  "author": "Patrick Segura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rasianart/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/rasianart/liri-node-app#readme"
+}
