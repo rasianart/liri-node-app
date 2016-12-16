@@ -1,4 +1,4 @@
-Liri
+<h1>Liri</h1>
 
 <strong>Your one stop need for all entertainment data.</strong>
 
