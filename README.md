@@ -11,8 +11,8 @@ Commands:
 
 “my-tweets” - Displays most recent tweets with date posted.
 
-“spotify-this <song-name>” - Searches spotify for most relevant response and returns respecful info.
+“spotify-this 'song-name'” - Searches spotify for most relevant response and returns respecful info.
 
-“movie-this <movie-name>” - Searches OMDB for most relevant response and returns respecful info.
+“movie-this 'movie-name'” - Searches OMDB for most relevant response and returns respecful info.
 
 “do-what-it-says” - Reads commands and parameters from a text file in directory and runs those commands.
