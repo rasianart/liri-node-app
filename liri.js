@@ -1,12 +1,12 @@
-let keys = require('./public/javascript/keys.js');
+let keys    = require('./public/javascript/keys.js');
 let twitter = require('twitter');
 let spotify = require('spotify');
 let request = require('request');
-let moment = require('moment');
-let fs = require('fs');
+let moment  = require('moment');
+let fs      = require('fs');
 
 
-let client = new twitter({
+let client  = new twitter({
     consumer_key: keys.twitterKeys.consumer_key,
     consumer_secret: keys.twitterKeys.consumer_secret,
     access_token_key: keys.twitterKeys.access_token_key,
@@ -24,10 +24,10 @@ let combineArg = () => {
 
 let myTweets = () => {
     let params = { screen_name: 'Rasianart', count: 20 };
-    client.get('statuses/user_timeline', params, let = (error, tweets, response) => {
+    client.get('statuses/user_timeline', params, (error, tweets, response) => {
     	let tweetArr = [];
         if (!error) {
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 tweetArr.push(tweets[i].text);
                 tweetArr.push(tweets[i].created_at);
             }
@@ -49,14 +49,14 @@ let myTweets = () => {
 }
 
 let searchSpotify = (search, defaultIndex) => {
-    spotify.search({ type: 'track', query: search }, let = (error, data) => {
+    spotify.search({ type: 'track', query: search }, (error, data) => {
         if (error) {
             console.log(error);
-            return;
+            return; 
         } else if (combineQuery === '') {
             console.log("You forgot to enter a song to search!  It's OK, I'll forgive you. Here's some Ace of Base")
-            searchSpotify('The Sign', 6);
-            combineQuery = '.'
+            combineQuery = 'The Sign';
+            searchSpotify(combineQuery, 6);
             return;
         } else if (!data.tracks.items[0]) {
             console.log("This track does not exist.  Instead, take some Ace of Base!");
@@ -75,7 +75,7 @@ let searchSpotify = (search, defaultIndex) => {
 }
 
 let searchOMDB = (search) => {
-    request("http://www.omdbapi.com/?t=" + search + "&y=&plot=short&tomatoes=true&r=json", let = (error, response, body) => {
+    request("http://www.omdbapi.com/?t=" + search + "&y=&plot=short&tomatoes=true&r=json", (error, response, body) => {
         if (combineQuery === '') {
             console.log("You forgot to enter a movie!  It's OK, I'll forgive you. Here's Mr. Nobody");
             searchOMDB('Mr.+Nobody');
@@ -102,7 +102,7 @@ let searchOMDB = (search) => {
 
 let doWhatItSays = () => {
     let doIt = '';
-    fs.readFile('./public/random.txt', 'utf8', let = (error, data) => {
+    fs.readFile('./public/random.txt', 'utf8', (error, data) => {
         let dataArr = data.split(',');
         let dataCommand = dataArr[0];
         combineQuery = dataArr[1];
@@ -111,7 +111,7 @@ let doWhatItSays = () => {
 }
 
 let logData = (log) => {
-    fs.appendFile('./public/log.txt', moment().format('MMMM Do YYYY, h:mm:ss a') + log, let = (error, data) => {});
+    fs.appendFile('./public/log.txt', moment().format('MMMM Do YYYY, h:mm:ss a') + log, (error, data) => {});
 }
 
 let printData = (object) => {

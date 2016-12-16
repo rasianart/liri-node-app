@@ -1,11 +1,10 @@
 {
-  "name": "liri",
+  "name": "liri-app",
   "version": "1.0.0",
-  "description": "Get All Your Media Needs",
+  "description": "Give commands and queries to Liri. Liri fetches and returns responses.",
   "main": "liri.js",
   "dependencies": {
-    "inquirer": "^2.0.0",
-    "jquery": "^3.1.1",
+    "moment": "^2.17.1",
     "request": "^2.79.0",
     "spotify": "^0.3.0",
     "twitter": "^1.5.0"
@@ -18,6 +17,12 @@
     "type": "git",
     "url": "git+https://github.com/rasianart/liri-node-app.git"
   },
+  "keywords": [
+    "liri",
+    "spotify",
+    "twitter",
+    "omdb"
+  ],
   "author": "Patrick Segura",
   "license": "ISC",
   "bugs": {
